@@ -12,4 +12,6 @@ RUN pip --no-cache-dir install -c $CONSTRAINTS_FILE \
     `basename $WHEEL_PATH`[all] \
     && sudo rm `basename $WHEEL_PATH`
 
+ENV PATH="${PATH}:${HOME}/.local/bin"
+
 RUN pip freeze > /home/ray/pip-freeze.txt
